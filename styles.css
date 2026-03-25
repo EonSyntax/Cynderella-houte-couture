@@ -1,0 +1,43 @@
+.glass-nav {
+  background: rgba(18, 17, 13, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 53, 0.2);
+}
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 17, 13, 0.3) 0%,
+    rgba(18, 17, 13, 0.8) 100%
+  );
+}
+.serif-luxury {
+  font-family: "Times New Roman", serif;
+}
+.dynamic-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+.glass-card {
+  background: rgba(212, 175, 53, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 53, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  background: rgba(212, 175, 53, 0.1);
+  border-color: rgba(212, 175, 53, 0.4);
+  transform: translateY(-4px);
+}
+.glass-effect {
+  background: rgba(45, 41, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 53, 0.2);
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, #d4af35, transparent);
+}

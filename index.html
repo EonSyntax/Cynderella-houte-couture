@@ -14,13 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="./styles.css" rel="stylesheet" />
     <script id="tailwind-config">
       tailwind.config = {
-        // darkMode: "class",
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
@@ -43,1075 +40,1019 @@
         },
       };
     </script>
-    <style>
-      .glass-nav {
-        background: rgba(18, 17, 13, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(212, 175, 53, 0.2);
-      }
-      .hero-gradient {
-        background: linear-gradient(
-          to bottom,
-          rgba(18, 17, 13, 0.3) 0%,
-          rgba(18, 17, 13, 0.8) 100%
-        );
-      }
-      .serif-luxury {
-        font-family: "Times New Roman", serif;
-      }
-      .dynamic-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.5rem;
-      }
-      .glass-card {
-        background: rgba(212, 175, 53, 0.05);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(212, 175, 53, 0.1);
-        -webkit-backdrop-filter: blur(12px);
-        transition: all 0.3s ease;
-      }
-      .glass-card:hover {
-        background: rgba(212, 175, 53, 0.1);
-        border-color: rgba(212, 175, 53, 0.4);
-        transform: translateY(-4px);
-      }
-      .glass-effect {
-        background: rgba(45, 41, 26, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(212, 175, 53, 0.2);
-      }
-      
-      .timeline-line {
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          #d4af35,
-          transparent
-        );
-      }
-    </style>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden"
   >
-    <!-- <div class="relative min-h-screen flex flex-col"> -->
-      <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-          <div class="flex items-center justify-between h-20">
-            <div class="">
-              <h1
-                class="font-serif text-xl md:text-2xl font-bold tracking-tight text-slate-100"
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <div class="">
+            <h1
+              class="font-serif text-xl md:text-2xl font-bold tracking-tight text-white dark:text-slate-100"
+            >
+              Cynderella
+              <span class="text-primary italic font-medium text-lg ml-1"
+                >Haute Couture</span
               >
-                Cynderella
-                <span class="text-primary italic font-medium text-lg ml-1"
-                  >Haute Couture</span
-                >
-              </h1>
+            </h1>
+          </div>
+          <nav class="hidden lg:flex items-center gap-8">
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >About</a
+            >
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Our Process</a
+            >
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Designs</a
+            >
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Why Choose Us</a
+            >
+            <a
+              class="text-sm font-medium text-white dark:text-slate-100 hover:text-primary dark:hover:text-primary transition-colors"
+              href="#"
+              >Testimonials</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="hidden md:flex items-center justify-center px-6 py-2 rounded-full border border-primary/50 text-primary hover:bg-primary hover:text-background-dark transition-all text-sm font-bold tracking-wide"
+            >
+              Contact
+            </button>
+            <button
+              class="lg:hidden text-primary hover:text-slate-100 transition-colors"
+            >
+              <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            <button
+              id="theme-toggle"
+              class="text-slate-100 hover:text-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-3xl">light_mode</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative flex-1 flex flex-col">
+      <section
+        class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      >
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute inset-0 hero-gradient hidden dark:block z-10"
+          ></div>
+
+          <video
+            class="w-full h-full object-cover"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="assets/hero.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
+          <div
+            class="mb-6 inline-flex items-center gap-2 px-4 py-1 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+            ></span>
+            <span
+              class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary"
+              >New Collection 2026</span
+            >
+          </div>
+          <h2
+            class="font-serif text-5xl md:text-7xl lg:text-8xl text-slate-100 font-bold leading-[1.1] mb-8"
+          >
+            Where <span class="italic text-primary">Luxury</span> Meets Elegance
+          </h2>
+          <p
+            class="text-lg md:text-xl text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
+          >
+            Crafting timeless couture pieces tailored to perfection. Experience
+            the pinnacle of bespoke craftsmanship and midnight aesthetics.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-6"
+          >
+            <button
+              class="w-full sm:w-auto px-10 py-4 bg-primary text-background-dark rounded-full font-bold text-lg hover:bg-white transition-all transform hover:scale-105 shadow-xl shadow-primary/20"
+            >
+              Book a Consultation
+            </button>
+            <button
+              class="w-full sm:w-auto px-10 py-4 border border-slate-100/30 text-slate-100 rounded-full font-bold text-lg hover:bg-slate-100/10 backdrop-blur-sm transition-all"
+            >
+              View Lookbook
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
+        >
+          <div class="flex flex-col items-center gap-2 opacity-50">
+            <span class="text-[10px] uppercase tracking-widest text-slate-300"
+              >Scroll</span
+            >
+            <div
+              class="w-px h-12 bg-gradient-to-b from-primary to-transparent"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section
+        class="min-h-screen w-full flex flex-col lg:flex-row bg-background-light dark:bg-background-dark2 overflow-hidden"
+      >
+        <!-- Left Column: Editorial Text -->
+        <div
+          class="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 lg:py-0 space-y-12"
+        >
+          <div class="space-y-4">
+            <span
+              class="text-primary font-bold uppercase tracking-[0.4em] text-xs"
+              >Our Heritage</span
+            >
+            <h2
+              class="text-4xl md:text-6xl font-black text-slate-900 dark:text-slate-100 leading-tight uppercase"
+            >
+              The Art of <br />
+              Craftsmanship
+            </h2>
+          </div>
+          <div class="space-y-6 max-w-xl">
+            <p
+              class="text-lg md:text-xl text-slate-700 dark:text-slate-300 font-light leading-relaxed italic border-l-4 border-primary pl-6"
+            >
+              Cynderella Haute Couture represents the pinnacle of sartorial
+              excellence. Every stitch tells a story of dedication, precision,
+              and an unwavering commitment to the art of high fashion.
+            </p>
+            <p class="text-slate-600 dark:text-slate-400 leading-loose">
+              Founded on the principles of traditional European tailoring and
+              contemporary avant-garde aesthetics, our atelier serves as a
+              sanctuary for those who seek more than just clothing. We create
+              wearable art that captures the essence of the individual, blending
+              rare fabrics with artisanal techniques passed down through
+              generations.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-white/5"
+          >
+            <div>
+              <h4 class="text-primary text-3xl font-black mb-1">25+</h4>
+              <p
+                class="text-[10px] uppercase tracking-widest font-bold opacity-60"
+              >
+                Years Experience
+              </p>
             </div>
-            <nav class="hidden lg:flex items-center gap-8">
-              <a
-                class="text-sm font-medium text-slate-100 hover:text-primary transition-colors"
-                href="#"
-                >Home</a
+            <div>
+              <h4 class="text-primary text-3xl font-black mb-1">1.2k</h4>
+              <p
+                class="text-[10px] uppercase tracking-widest font-bold opacity-60"
               >
-              <a
-                class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                href="#"
-                >About</a
+                Custom Masterpieces
+              </p>
+            </div>
+          </div>
+          <div>
+            <button
+              class="inline-flex items-center gap-4 text-slate-900 dark:text-slate-100 font-bold uppercase tracking-widest group"
+            >
+              <span
+                class="border-b-2 border-primary pb-1 group-hover:pr-4 transition-all"
+                >Explore Our Legacy</span
               >
-              <a
-                class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                href="#"
-                >Our Process</a
+              <span
+                class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform"
+                >arrow_right_alt</span
               >
-              <a
-                class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                href="#"
-                >Designs</a
+            </button>
+          </div>
+        </div>
+        <!-- Right Column: High-end Photography -->
+        <div
+          class="w-full lg:w-1/2 h-[600px] lg:h-auto relative bg-slate-100 dark:bg-slate-900/50"
+        >
+          <div
+            class="absolute inset-0 p-8 lg:p-20 flex items-center justify-center"
+          >
+            <!-- Main Image -->
+            <div class="relative w-full h-full">
+              <img
+                alt="High-end fashion photography"
+                class="w-full h-full object-cover rounded shadow-2xl"
+                data-alt="Editorial close-up of luxurious golden fabric textures"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ztpuA0hrvS7J8EoX9J6Q_mQhCBp3LrK-onBmskBttfS5JJ9kWi43HLaU6okZ0b8nvGgVNVIPx2RoQpxmmbRyQqCXbLguTKLWhZzeSTmOyNWFGrXGFcmKnalAXjDCBHpvb6PgiGuOSVYS7G1-h2uFqTDjdp32guvB2HcCU2iO3whvl41osJuAFc43tBwC94HqO_7MK2O5ot4g9QyXOHAVXSBIPPeII-UmXry8vG2GI3cwISSTSwwHnC27lo3JgK3gwVZGGCTrPUE"
+              />
+              <!-- Decorative Floating Element -->
+              <div
+                class="absolute -bottom-10 -left-10 hidden md:block w-64 h-80 bg-background-dark p-2 border border-primary/20 shadow-2xl"
               >
-              <a
-                class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                href="#"
-                >Why Choose Us</a
+                <img
+                  alt="Detail work"
+                  class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700"
+                  data-alt="Atelier workspace with sketches and fabric swatches"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIOYtK3nTdPEABJzP1IeLGioL7cBpmbMnlmHzyyH_hU9MDJXxTt6v5rZF5EJOHZ07y8fVqqoFVd5UYlVxCZodEW32j2C1UK9nrn6nRPV_u6GZLr-LAN_gTNEIvRHxSNm-zQW39HyPrNWMOEyxJNGBx1Yjnol_JnJkqQkGm4hj4kStCN3ZBkmu1jdArMj24lslajz0W66NZTwllW_nHAGtCydVoe18Fn1RB00zc1L1zJRU6DJ7Un_V4TCZBUc1V5HGg7DkmJQni-GE"
+                />
+              </div>
+              <!-- Floating Champagne Gold Tag -->
+              <div
+                class="absolute top-45 right-[0.5rem] bg-primary text-background-dark py-4 px-8 rotate-90 origin-right"
               >
-              <a
-                class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
-                href="#"
-                >Testimonials</a
-              >
-            </nav>
-            <div class="flex items-center gap-4">
+                <span
+                  class="text-xs font-black uppercase tracking-[0.5em] whitespace-nowrap"
+                  >Atelier Collection 2026</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- How we get it Done Section -->
+      <section class="px-6 md:px-16 py-24">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-2 gap-6"
+        >
+          <div>
+            <h3
+              class="text-4xl md:text-6xl font-black serif-luxury italic text-primary"
+            >
+              How we Get It
+              <span class="text-background-dark dark:text-slate-100">Done</span>
+            </h3>
+            <p
+              class="text-primary/60 max-w-md mt-4 uppercase tracking-widest text-xs leading-relaxed"
+            >
+              A journey from a single thread to a timeless masterpiece, tailored
+              exclusively for your sihouette.
+            </p>
+          </div>
+          <div class="flex items-center gap-4 border-b border-primary/30 pb-2">
+            <span class="text-4xl font-black serif-luxury opacity-20">|</span>
+            <span class="uppercase tracking-widest text-[10px] font-bold"
+              >Scroll to discover</span
+            >
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
+          <!-- Timeline Content -->
+          <div class="relative w-full">
+            <!-- Vertical Line for Desktop -->
+            <div
+              class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px timeline-line -translate-x-1/2"
+            ></div>
+            <div class="space-y-24 relative">
+              <!-- Step 1 -->
+              <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1 md:text-right order-2 md:order-1">
+                  <div
+                    class="glass-card p-8 rounded-xl border-l-4 border-l-primary md:border-l-0 md:border-r-4 md:border-r-primary"
+                  >
+                    <span
+                      class="text-primary font-mono text-sm font-bold mb-2 block"
+                      >STEP 01</span
+                    >
+                    <h3 class="text-2xl font-bold mb-4">
+                      Selecting the Perfect Style
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                      An intimate consultation to explore silhouettes and
+                      fabrics that reflect your unique essence. We delve into
+                      your vision, curating a mood board that defines your
+                      personal aesthetic.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="relative z-10 flex items-center justify-center order-1 md:order-2"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-background-dark font-bold"
+                      >palette</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="flex-1 order-3 overflow-hidden rounded-xl shadow-2xl"
+                >
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Elegant client consultation with fabric swatches and fashion sketches"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBCH-RrZA35tf1lxafz48pGLa_aP6GSTY5Y3Gm5YRdMqT13U35I055y3600qxszzpNBznlc0GtrcDWveUNe_9gTa6YwuieyMFeuvxaKbC3TccLv50r6JxIBT8jyrsFPEguKxdUkdO2wRlTzf_D3Fe3bkzXuw3KLoJIcxGEUj7nwrCqtUgqf1_g-JG1J3XioPLx_a2gSKvZZuspU9CxJy8w4ZBWz_vXh-mXskWcuPxOop65R9MAjiUZG-QqCVhosy8I1Wj2NUf6PFj4&quot;);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div
+                  class="flex-1 order-3 md:order-1 overflow-hidden rounded-xl shadow-2xl"
+                >
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Professional tailor measuring a luxury silk garment on a mannequin"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBGlKXEA6VFVl4B7mEewaOVOZOLYDSRvFP9RqAB-OLJsmP3YDbwY3Tch8499gwknM4h9vf0IFSVe0XyMR31gF3XnjO4KRsL0pIPeuRDJFfyTDJ5NH1_PiK3mnmrMt48FF5AVNvx4FRu1VZQOqd9CY0Leydec6A__-uD3OE7XbzdiMkIeOgt8Az0ELq7GVOJUg3ug2Cr37BtF6YpbtRGokCHfRI3mKcgoliRloJvZ8hbvhIhcqiRwr_uJfMSE3NtYlzNaYaX2gbxV5E&quot;);
+                    "
+                  ></div>
+                </div>
+                <div
+                  class="relative z-10 flex items-center justify-center order-1 md:order-2"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-background-dark font-bold"
+                      >straighten</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-1 text-left order-2 md:order-3">
+                  <div
+                    class="glass-card p-8 rounded-xl border-l-4 border-l-primary"
+                  >
+                    <span
+                      class="text-primary font-mono text-sm font-bold mb-2 block"
+                      >STEP 02</span
+                    >
+                    <h3 class="text-2xl font-bold mb-4">Body Measurements</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                      Precision is the soul of couture. Our master fitters
+                      capture every contour and detail to ensure a flawless
+                      second-skin fit that moves effortlessly with you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1 md:text-right order-2 md:order-1">
+                  <div
+                    class="glass-card p-8 rounded-xl border-l-4 border-l-primary md:border-l-0 md:border-r-4 md:border-r-primary"
+                  >
+                    <span
+                      class="text-primary font-mono text-sm font-bold mb-2 block"
+                      >STEP 03</span
+                    >
+                    <h3 class="text-2xl font-bold mb-4">Perfect Sewing</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                      Hand-stitched excellence where every seam is a testament
+                      to our artisanal heritage. Hundreds of hours go into
+                      meticulous embroidery and delicate finishing.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="relative z-10 flex items-center justify-center order-1 md:order-2"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-background-dark font-bold"
+                      >shutter_speed</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="flex-1 order-3 overflow-hidden rounded-xl shadow-2xl"
+                >
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Extreme close up of expert hand stitching on luxury fabric"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCWJKprOf2yEUS_6Nl-2MgTq8s1WoHFVKTDrJoTWEAJcFtyZZocdXvOpeXZNugOLL5cnpjyXmEvKS7QuCnahvPTVYE6kd72dMjT1p9qXGC-erXt46Fh9jNQh4QntoN2S3Gln7APlh3jWykj1GyiHg4YRM4RFB3JP6dueAsNtv4IKTvAvCaocFwu2NP6X_69zCHk-hHKITl9mLta9F1h9Omgo-tu_02DCIaWdJO_7B13aoeR96GM2SA6wDa21cmNvOxACima8KcJ3eI&quot;);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <!-- Step 4 -->
+              <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div
+                  class="flex-1 order-3 md:order-1 overflow-hidden rounded-xl shadow-2xl"
+                >
+                  <div
+                    class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    data-alt="Breathtaking finished couture gown on a runway or studio"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBU7ubZOiGDllJCdITpHtcdZqAwRk8YEy55TCbSc3M0zpb-J_8AHzqPu3fofZ6cVIEgD56S4-8HmuT6ZdjpFy-itv7Qm65aMMeYhY83PYrSG3crfTWzXh_KfQl2D0vyKkKZ2ZhfaFF_Mrl-lpyexUouoMniBUH8RtmCbjr94TtlAHQhhLcJCwIaS3jnyRxrs_BtmJLakbGR72Z9JabkLXvlaB3ShJCRgPiNC0xNyhVXrReR9i0kAvNx7I3xufvLB1PRXO6--iF8UO0&quot;);
+                    "
+                  ></div>
+                </div>
+                <div
+                  class="relative z-10 flex items-center justify-center order-1 md:order-2"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-background-dark font-bold"
+                      >diamond</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-1 text-left order-2 md:order-3">
+                  <div
+                    class="glass-card p-8 rounded-xl border-l-4 border-l-primary"
+                  >
+                    <span
+                      class="text-primary font-mono text-sm font-bold mb-2 block"
+                      >STEP 04</span
+                    >
+                    <h3 class="text-2xl font-bold mb-4">
+                      Dream Dress Comes to Life
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                      The final reveal of your bespoke gown—a true manifestation
+                      of elegance and dreams. A wearable piece of art, tailored
+                      exclusively for your most memorable moments.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Call to Action -->
+          <div class="mt-32 w-full max-w-4xl">
+            <div
+              class="bg-gradient-to-r from-primary/20 via-primary/5 to-transparent border border-primary/20 p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
+            >
+              <div>
+                <h2 class="text-3xl font-bold mb-2">Begin Your Journey</h2>
+                <p class="text-slate-400">
+                  Experience the world of bespoke luxury with a private
+                  consultation.
+                </p>
+              </div>
               <button
-                class="hidden md:flex items-center justify-center px-6 py-2 rounded-full border border-primary/50 text-primary hover:bg-primary hover:text-background-dark transition-all text-sm font-bold tracking-wide"
+                class="bg-primary text-background-dark px-10 py-4 rounded-lg font-black tracking-widest uppercase hover:scale-105 transition-transform"
               >
-                Contact
-              </button>
-              <button class="lg:hidden text-slate-100">
-                <span class="material-symbols-outlined text-3xl">menu</span>
+                Reserve Your Date
               </button>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <main class="relative flex-1 flex flex-col">
-        <section
-          class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      <!-- Signature Fashion Designs (Asymmetrical Grid) -->
+      <section class="px-6 md:px-16 py-24">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-5 gap-6"
         >
-          <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 hero-gradient z-10"></div>
-            
-            <img
-              alt="High fashion model in golden gown"
-              class="w-full h-full object-cover"
-              data-alt="Editorial fashion photography of model in golden gown on runway"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFXMYQrpf6LmbD1wMfiDaq13dM-yU0GxGB3WAk8Fa7cUf_t3MtzWw83a7A9YwTaWwNuBDQdTdIATMj2-qpFOh0gCYy8DqlztaNXK1n8M4L9nvqlV7Ckk5ivoI-pIYTKMeEEPfWojROz-JnfZZ8nFlp9BR64DrX3XThfWQu6aJKSvo7OlYwW5R0Q-jzlXuqORgRz5Fp3wTdFuEaKmSojyBa5mmr20GDXL-k0lvq5B5EWA8yiMx6DcRE1NAyi3bPwP4ltIEdrxZmjL0"
-            />
-          </div>
-          <div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
-            <div
-              class="mb-6 inline-flex items-center gap-2 px-4 py-1 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md"
+          <div>
+            <h3
+              class="text-4xl md:text-6xl font-black serif-luxury italic text-primary"
             >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
-              ></span>
-              <span
-                class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary"
-                >New Collection 2026</span
+              Signature
+              <span class="text-background-dark dark:text-slate-100"
+                >Fashion</span
               >
-            </div>
-            <h2
-              class="font-serif text-5xl md:text-7xl lg:text-8xl text-slate-100 font-bold leading-[1.1] mb-8"
-            >
-              Where <span class="italic text-primary">Luxury</span> Meets
-              Elegance
-            </h2>
+            </h3>
             <p
-              class="text-lg md:text-xl text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed"
+              class="text-primary/60 max-w-md mt-4 uppercase tracking-widest text-xs leading-relaxed"
             >
-              Crafting timeless couture pieces tailored to perfection.
-              Experience the pinnacle of bespoke craftsmanship and midnight
-              aesthetics.
+              Where haute couture meets the avant-garde. Each piece is a
+              hand-crafted narrative of silk, velvet, and dreams.
             </p>
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-6"
+          </div>
+          <div class="flex items-center gap-4 border-b border-primary/30 pb-2">
+            <span class="text-4xl font-black serif-luxury opacity-20">|</span>
+            <span class="uppercase tracking-widest text-[10px] font-bold"
+              >Scroll to discover</span
             >
-              <button
-                class="w-full sm:w-auto px-10 py-4 bg-primary text-background-dark rounded-full font-bold text-lg hover:bg-white transition-all transform hover:scale-105 shadow-xl shadow-primary/20"
-              >
-                Book a Consultation
-              </button>
-              <button
-                class="w-full sm:w-auto px-10 py-4 border border-slate-100/30 text-slate-100 rounded-full font-bold text-lg hover:bg-slate-100/10 backdrop-blur-sm transition-all"
-              >
-                View Lookbook
-              </button>
-            </div>
           </div>
+        </div>
+        <div class="dynamic-grid">
+          <!-- Large Feature Card -->
           <div
-            class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block"
+            class="col-span-12 md:col-span-7 group relative aspect-[4/5] overflow-hidden bg-primary/5"
           >
-            <div class="flex flex-col items-center gap-2 opacity-50">
-              <span class="text-[10px] uppercase tracking-widest text-slate-300"
-                >Scroll</span
-              >
-              <div
-                class="w-px h-12 bg-gradient-to-b from-primary to-transparent"
-              ></div>
-            </div>
-          </div>
-        </section>
-        <!-- About Section -->
-        <section
-          class="min-h-screen w-full flex flex-col lg:flex-row bg-background-light dark:bg-background-dark2 overflow-hidden"
-        >
-          <!-- Left Column: Editorial Text -->
-          <div
-            class="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 lg:py-0 space-y-12"
-          >
-            <div class="space-y-4">
-              <span
-                class="text-primary font-bold uppercase tracking-[0.4em] text-xs"
-                >Our Heritage</span
-              >
-              <h2
-                class="text-4xl md:text-6xl font-black text-slate-900 dark:text-slate-100 leading-tight uppercase"
-              >
-                The Art of <br />
-                Craftsmanship
-              </h2>
-            </div>
-            <div class="space-y-6 max-w-xl">
-              <p
-                class="text-lg md:text-xl text-slate-700 dark:text-slate-300 font-light leading-relaxed italic border-l-4 border-primary pl-6"
-              >
-                Cynderella Haute Couture represents the pinnacle of sartorial
-                excellence. Every stitch tells a story of dedication, precision,
-                and an unwavering commitment to the art of high fashion.
+            <div
+              class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              data-alt="Avant-garde model in yellow editorial dress"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC8f1Hpesl4FLRX_LISO4gEsk9bCmbDOzGRRmnUCZmgpBOJYm2Xhw57Pf3QpxAU9HhuJweumSAn_aqjK7TQgR0X0oc3qkUFePTtnSmq0ELcngVRyTN5gSLe-uwqtv6lWoBLseS1JGlt4VnkkkhDOx2Y_UU59N_jXwylDMOBluErp-OC0JXNJkmIflemCwZbPLT54cYpLrpiNDHQW_ryKQXMgdnsz70LxQUTFEjLWIQULRQi_j049MGbeoT3-6gcsJQka4EXpzteneo&quot;);
+              "
+            ></div>
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"
+            ></div>
+            <div
+              class="absolute bottom-10 left-10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+            >
+              <p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
+                LOOK 043
               </p>
-              <p class="text-slate-600 dark:text-slate-400 leading-loose">
-                Founded on the principles of traditional European tailoring and
-                contemporary avant-garde aesthetics, our atelier serves as a
-                sanctuary for those who seek more than just clothing. We create
-                wearable art that captures the essence of the individual,
-                blending rare fabrics with artisanal techniques passed down
-                through generations.
-              </p>
-            </div>
-            <div
-              class="grid grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-white/5"
-            >
-              <div>
-                <h4 class="text-primary text-3xl font-black mb-1">25+</h4>
-                <p
-                  class="text-[10px] uppercase tracking-widest font-bold opacity-60"
-                >
-                  Years Experience
-                </p>
-              </div>
-              <div>
-                <h4 class="text-primary text-3xl font-black mb-1">1.2k</h4>
-                <p
-                  class="text-[10px] uppercase tracking-widest font-bold opacity-60"
-                >
-                  Custom Masterpieces
-                </p>
-              </div>
-            </div>
-            <div>
-              <button
-                class="inline-flex items-center gap-4 text-slate-900 dark:text-slate-100 font-bold uppercase tracking-widest group"
-              >
-                <span
-                  class="border-b-2 border-primary pb-1 group-hover:pr-4 transition-all"
-                  >Explore Our Legacy</span
-                >
-                <span
-                  class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform"
-                  >arrow_right_alt</span
-                >
-              </button>
+              <h4 class="text-3xl font-black serif-luxury italic">
+                Saffron Rebellion
+              </h4>
             </div>
           </div>
-          <!-- Right Column: High-end Photography -->
-          <div
-            class="w-full lg:w-1/2 h-[600px] lg:h-auto relative bg-slate-100 dark:bg-slate-900/50"
-          >
+          <!-- Side Grid -->
+          <div class="col-span-12 md:col-span-5 flex flex-col gap-6">
             <div
-              class="absolute inset-0 p-8 lg:p-20 flex items-center justify-center"
-            >
-              <!-- Main Image -->
-              <div class="relative w-full h-full">
-                <img
-                  alt="High-end fashion photography"
-                  class="w-full h-full object-cover rounded shadow-2xl"
-                  data-alt="Editorial close-up of luxurious golden fabric textures"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_ztpuA0hrvS7J8EoX9J6Q_mQhCBp3LrK-onBmskBttfS5JJ9kWi43HLaU6okZ0b8nvGgVNVIPx2RoQpxmmbRyQqCXbLguTKLWhZzeSTmOyNWFGrXGFcmKnalAXjDCBHpvb6PgiGuOSVYS7G1-h2uFqTDjdp32guvB2HcCU2iO3whvl41osJuAFc43tBwC94HqO_7MK2O5ot4g9QyXOHAVXSBIPPeII-UmXry8vG2GI3cwISSTSwwHnC27lo3JgK3gwVZGGCTrPUE"
-                />
-                <!-- Decorative Floating Element -->
-                <div
-                  class="absolute -bottom-10 -left-10 hidden md:block w-64 h-80 bg-background-dark p-2 border border-primary/20 shadow-2xl"
-                >
-                  <img
-                    alt="Detail work"
-                    class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700"
-                    data-alt="Atelier workspace with sketches and fabric swatches"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIOYtK3nTdPEABJzP1IeLGioL7cBpmbMnlmHzyyH_hU9MDJXxTt6v5rZF5EJOHZ07y8fVqqoFVd5UYlVxCZodEW32j2C1UK9nrn6nRPV_u6GZLr-LAN_gTNEIvRHxSNm-zQW39HyPrNWMOEyxJNGBx1Yjnol_JnJkqQkGm4hj4kStCN3ZBkmu1jdArMj24lslajz0W66NZTwllW_nHAGtCydVoe18Fn1RB00zc1L1zJRU6DJ7Un_V4TCZBUc1V5HGg7DkmJQni-GE"
-                  />
-                </div>
-                <!-- Floating Champagne Gold Tag -->
-                <div
-                  class="absolute top-45 right-[0.5rem] bg-primary text-background-dark py-4 px-8 rotate-90 origin-right"
-                >
-                  <span
-                    class="text-xs font-black uppercase tracking-[0.5em] whitespace-nowrap"
-                    >Atelier Collection 2026</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- How we get it Done Section -->
-        <section class="px-6 md:px-16 py-24">
-          <div
-            class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
-          >
-            <div>
-              <h3
-                class="text-4xl md:text-6xl font-black serif-luxury italic text-primary"
-              >
-                Signature Fashion
-              </h3>
-              <p
-                class="text-primary/60 max-w-md mt-4 uppercase tracking-widest text-xs leading-relaxed"
-              >
-                Where haute couture meets the avant-garde. Each piece is a
-                hand-crafted narrative of silk, velvet, and dreams.
-              </p>
-            </div>
-            <div
-              class="flex items-center gap-4 border-b border-primary/30 pb-2"
-            >
-              <span class="text-4xl font-black serif-luxury opacity-20"
-                >01</span
-              >
-              <span class="uppercase tracking-widest text-[10px] font-bold"
-                >Scroll to discover</span
-              >
-            </div>
-          </div>
-          <div class="flex flex-col items-center">
-            <!-- Timeline Content -->
-            <div class="relative w-full">
-              <!-- Vertical Line for Desktop -->
-              <div
-                class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px timeline-line -translate-x-1/2"
-              ></div>
-              <div class="space-y-24 relative">
-                <!-- Step 1 -->
-                <div
-                  class="flex flex-col md:flex-row items-center gap-12 group"
-                >
-                  <div class="flex-1 md:text-right order-2 md:order-1">
-                    <div
-                      class="glass-card p-8 rounded-xl border-l-4 border-l-primary md:border-l-0 md:border-r-4 md:border-r-primary"
-                    >
-                      <span
-                        class="text-primary font-mono text-sm font-bold mb-2 block"
-                        >STEP 01</span
-                      >
-                      <h3 class="text-2xl font-bold mb-4">
-                        Selecting the Perfect Style
-                      </h3>
-                      <p class="text-slate-400 leading-relaxed">
-                        An intimate consultation to explore silhouettes and
-                        fabrics that reflect your unique essence. We delve into
-                        your vision, curating a mood board that defines your
-                        personal aesthetic.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="relative z-10 flex items-center justify-center order-1 md:order-2"
-                  >
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
-                    >
-                      <span
-                        class="material-symbols-outlined text-background-dark font-bold"
-                        >palette</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="flex-1 order-3 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <div
-                      class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      data-alt="Elegant client consultation with fabric swatches and fashion sketches"
-                      style="
-                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBCH-RrZA35tf1lxafz48pGLa_aP6GSTY5Y3Gm5YRdMqT13U35I055y3600qxszzpNBznlc0GtrcDWveUNe_9gTa6YwuieyMFeuvxaKbC3TccLv50r6JxIBT8jyrsFPEguKxdUkdO2wRlTzf_D3Fe3bkzXuw3KLoJIcxGEUj7nwrCqtUgqf1_g-JG1J3XioPLx_a2gSKvZZuspU9CxJy8w4ZBWz_vXh-mXskWcuPxOop65R9MAjiUZG-QqCVhosy8I1Wj2NUf6PFj4&quot;);
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <!-- Step 2 -->
-                <div
-                  class="flex flex-col md:flex-row items-center gap-12 group"
-                >
-                  <div
-                    class="flex-1 order-3 md:order-1 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <div
-                      class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      data-alt="Professional tailor measuring a luxury silk garment on a mannequin"
-                      style="
-                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBGlKXEA6VFVl4B7mEewaOVOZOLYDSRvFP9RqAB-OLJsmP3YDbwY3Tch8499gwknM4h9vf0IFSVe0XyMR31gF3XnjO4KRsL0pIPeuRDJFfyTDJ5NH1_PiK3mnmrMt48FF5AVNvx4FRu1VZQOqd9CY0Leydec6A__-uD3OE7XbzdiMkIeOgt8Az0ELq7GVOJUg3ug2Cr37BtF6YpbtRGokCHfRI3mKcgoliRloJvZ8hbvhIhcqiRwr_uJfMSE3NtYlzNaYaX2gbxV5E&quot;);
-                      "
-                    ></div>
-                  </div>
-                  <div
-                    class="relative z-10 flex items-center justify-center order-1 md:order-2"
-                  >
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
-                    >
-                      <span
-                        class="material-symbols-outlined text-background-dark font-bold"
-                        >straighten</span
-                      >
-                    </div>
-                  </div>
-                  <div class="flex-1 text-left order-2 md:order-3">
-                    <div
-                      class="glass-card p-8 rounded-xl border-l-4 border-l-primary"
-                    >
-                      <span
-                        class="text-primary font-mono text-sm font-bold mb-2 block"
-                        >STEP 02</span
-                      >
-                      <h3 class="text-2xl font-bold mb-4">Body Measurements</h3>
-                      <p class="text-slate-400 leading-relaxed">
-                        Precision is the soul of couture. Our master fitters
-                        capture every contour and detail to ensure a flawless
-                        second-skin fit that moves effortlessly with you.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Step 3 -->
-                <div
-                  class="flex flex-col md:flex-row items-center gap-12 group"
-                >
-                  <div class="flex-1 md:text-right order-2 md:order-1">
-                    <div
-                      class="glass-card p-8 rounded-xl border-l-4 border-l-primary md:border-l-0 md:border-r-4 md:border-r-primary"
-                    >
-                      <span
-                        class="text-primary font-mono text-sm font-bold mb-2 block"
-                        >STEP 03</span
-                      >
-                      <h3 class="text-2xl font-bold mb-4">Perfect Sewing</h3>
-                      <p class="text-slate-400 leading-relaxed">
-                        Hand-stitched excellence where every seam is a testament
-                        to our artisanal heritage. Hundreds of hours go into
-                        meticulous embroidery and delicate finishing.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="relative z-10 flex items-center justify-center order-1 md:order-2"
-                  >
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
-                    >
-                      <span
-                        class="material-symbols-outlined text-background-dark font-bold"
-                        >shutter_speed</span
-                      >
-                    </div>
-                  </div>
-                  <div
-                    class="flex-1 order-3 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <div
-                      class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      data-alt="Extreme close up of expert hand stitching on luxury fabric"
-                      style="
-                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCWJKprOf2yEUS_6Nl-2MgTq8s1WoHFVKTDrJoTWEAJcFtyZZocdXvOpeXZNugOLL5cnpjyXmEvKS7QuCnahvPTVYE6kd72dMjT1p9qXGC-erXt46Fh9jNQh4QntoN2S3Gln7APlh3jWykj1GyiHg4YRM4RFB3JP6dueAsNtv4IKTvAvCaocFwu2NP6X_69zCHk-hHKITl9mLta9F1h9Omgo-tu_02DCIaWdJO_7B13aoeR96GM2SA6wDa21cmNvOxACima8KcJ3eI&quot;);
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <!-- Step 4 -->
-                <div
-                  class="flex flex-col md:flex-row items-center gap-12 group"
-                >
-                  <div
-                    class="flex-1 order-3 md:order-1 overflow-hidden rounded-xl shadow-2xl"
-                  >
-                    <div
-                      class="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      data-alt="Breathtaking finished couture gown on a runway or studio"
-                      style="
-                        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBU7ubZOiGDllJCdITpHtcdZqAwRk8YEy55TCbSc3M0zpb-J_8AHzqPu3fofZ6cVIEgD56S4-8HmuT6ZdjpFy-itv7Qm65aMMeYhY83PYrSG3crfTWzXh_KfQl2D0vyKkKZ2ZhfaFF_Mrl-lpyexUouoMniBUH8RtmCbjr94TtlAHQhhLcJCwIaS3jnyRxrs_BtmJLakbGR72Z9JabkLXvlaB3ShJCRgPiNC0xNyhVXrReR9i0kAvNx7I3xufvLB1PRXO6--iF8UO0&quot;);
-                      "
-                    ></div>
-                  </div>
-                  <div
-                    class="relative z-10 flex items-center justify-center order-1 md:order-2"
-                  >
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary border-4 border-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(212,175,53,0.4)]"
-                    >
-                      <span
-                        class="material-symbols-outlined text-background-dark font-bold"
-                        >diamond</span
-                      >
-                    </div>
-                  </div>
-                  <div class="flex-1 text-left order-2 md:order-3">
-                    <div
-                      class="glass-card p-8 rounded-xl border-l-4 border-l-primary"
-                    >
-                      <span
-                        class="text-primary font-mono text-sm font-bold mb-2 block"
-                        >STEP 04</span
-                      >
-                      <h3 class="text-2xl font-bold mb-4">
-                        Dream Dress Comes to Life
-                      </h3>
-                      <p class="text-slate-400 leading-relaxed">
-                        The final reveal of your bespoke gown—a true
-                        manifestation of elegance and dreams. A wearable piece
-                        of art, tailored exclusively for your most memorable
-                        moments.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Call to Action -->
-            <div class="mt-32 w-full max-w-4xl">
-              <div
-                class="bg-gradient-to-r from-primary/20 via-primary/5 to-transparent border border-primary/20 p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
-              >
-                <div>
-                  <h2 class="text-3xl font-bold mb-2">Begin Your Journey</h2>
-                  <p class="text-slate-400">
-                    Experience the world of bespoke luxury with a private
-                    consultation.
-                  </p>
-                </div>
-                <button
-                  class="bg-primary text-background-dark px-10 py-4 rounded-lg font-black tracking-widest uppercase hover:scale-105 transition-transform"
-                >
-                  Reserve Your Date
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Signature Fashion Designs (Asymmetrical Grid) -->
-        <section class="px-6 md:px-16 py-24">
-          <div
-            class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
-          >
-            <div>
-              <h3
-                class="text-4xl md:text-6xl font-black serif-luxury italic text-primary"
-              >
-                Signature Fashion
-              </h3>
-              <p
-                class="text-primary/60 max-w-md mt-4 uppercase tracking-widest text-xs leading-relaxed"
-              >
-                Where haute couture meets the avant-garde. Each piece is a
-                hand-crafted narrative of silk, velvet, and dreams.
-              </p>
-            </div>
-            <div
-              class="flex items-center gap-4 border-b border-primary/30 pb-2"
-            >
-              <span class="text-4xl font-black serif-luxury opacity-20"
-                >01</span
-              >
-              <span class="uppercase tracking-widest text-[10px] font-bold"
-                >Scroll to discover</span
-              >
-            </div>
-          </div>
-          <div class="dynamic-grid">
-            <!-- Large Feature Card -->
-            <div
-              class="col-span-12 md:col-span-7 group relative aspect-[4/5] overflow-hidden bg-primary/5"
+              class="group relative aspect-square overflow-hidden bg-primary/5"
             >
               <div
                 class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                data-alt="Avant-garde model in yellow editorial dress"
+                data-alt="Detail of a luxury fashion fabric"
                 style="
-                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC8f1Hpesl4FLRX_LISO4gEsk9bCmbDOzGRRmnUCZmgpBOJYm2Xhw57Pf3QpxAU9HhuJweumSAn_aqjK7TQgR0X0oc3qkUFePTtnSmq0ELcngVRyTN5gSLe-uwqtv6lWoBLseS1JGlt4VnkkkhDOx2Y_UU59N_jXwylDMOBluErp-OC0JXNJkmIflemCwZbPLT54cYpLrpiNDHQW_ryKQXMgdnsz70LxQUTFEjLWIQULRQi_j049MGbeoT3-6gcsJQka4EXpzteneo&quot;);
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAkDnsT30htaE4QuzbTTn9recbbNEUtJBhQttrPhrkhwDkonLQXNy32ALhstlbPWl6bewKQa8QRflecbbctwW_QAklYDqIdj0bCkwTrn0gQFftZ91KKf2ZyDWPn7gN7LHSPwN6TZ1_Ih0Q4TV7U0VAyed9K4zi3uS7pfK8-yvkzXlblGcdJw39JQH4zPqt8usTaf8J2NAG7hIx7vUNEDVBoUmHxehA6llrMslyu6qwrCox_RAQpyA4gwd0khxicB-dM29dHcIgxG20&quot;);
                 "
               ></div>
               <div
-                class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"
+                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
               ></div>
               <div
-                class="absolute bottom-10 left-10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+                class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
               >
                 <p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
-                  LOOK 042
+                  LOOK 044
                 </p>
-                <h4 class="text-3xl font-black serif-luxury italic">
-                  Saffron Rebellion
-                </h4>
-                <button
-                  class="mt-4 text-xs font-bold border-b border-primary pb-1"
-                >
-                  View Details
-                </button>
+                <h4 class="text-xl font-bold serif-luxury">Noir Nocturne</h4>
               </div>
             </div>
-            <!-- Side Grid -->
-            <div class="col-span-12 md:col-span-5 flex flex-col gap-6">
+            <div
+              class="group relative aspect-square overflow-hidden bg-primary/5"
+            >
               <div
-                class="group relative aspect-square overflow-hidden bg-primary/5"
-              >
-                <div
-                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  data-alt="Detail of a luxury fashion fabric"
-                  style="
-                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAkDnsT30htaE4QuzbTTn9recbbNEUtJBhQttrPhrkhwDkonLQXNy32ALhstlbPWl6bewKQa8QRflecbbctwW_QAklYDqIdj0bCkwTrn0gQFftZ91KKf2ZyDWPn7gN7LHSPwN6TZ1_Ih0Q4TV7U0VAyed9K4zi3uS7pfK8-yvkzXlblGcdJw39JQH4zPqt8usTaf8J2NAG7hIx7vUNEDVBoUmHxehA6llrMslyu6qwrCox_RAQpyA4gwd0khxicB-dM29dHcIgxG20&quot;);
-                  "
-                ></div>
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
-                ></div>
-                <div
-                  class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
-                >
-                  <h4 class="text-xl font-bold serif-luxury">Noir Nocturne</h4>
-                </div>
-              </div>
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                data-alt="Editorial fashion shoot in urban setting"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAcNxXyReWkfF6BXoQkJ22DLKXnjEujn_Oiz8ZfRJ805WqK0dePFKHNER3KBDwTHHI0hsJQ-vAF1ub2e9QYmfG--2NWZdB_xORmUifLkNl2r2-yCsaCZnFJdXCvPJeTmMd1mc7cczdUCepEuA1rR2EKvs6Ca4Xw1y2_pua0nNkOUtaGh6cVF2XolVrUPPICDXTwVBNI4XQWnH9j9C09ANOIA9tUlaSa7sJGJzsl_1kICfzY0KVOT1c3kyFbnyoZeUaTydRAMHsL6FE&quot;);
+                "
+              ></div>
               <div
-                class="group relative aspect-square overflow-hidden bg-primary/5"
-              >
-                <div
-                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  data-alt="Editorial fashion shoot in urban setting"
-                  style="
-                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAcNxXyReWkfF6BXoQkJ22DLKXnjEujn_Oiz8ZfRJ805WqK0dePFKHNER3KBDwTHHI0hsJQ-vAF1ub2e9QYmfG--2NWZdB_xORmUifLkNl2r2-yCsaCZnFJdXCvPJeTmMd1mc7cczdUCepEuA1rR2EKvs6Ca4Xw1y2_pua0nNkOUtaGh6cVF2XolVrUPPICDXTwVBNI4XQWnH9j9C09ANOIA9tUlaSa7sJGJzsl_1kICfzY0KVOT1c3kyFbnyoZeUaTydRAMHsL6FE&quot;);
-                  "
-                ></div>
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
-                ></div>
-                <div
-                  class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
-                >
-                  <h4 class="text-xl font-bold serif-luxury">Urban Divinity</h4>
-                </div>
+                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
+              ></div>
+              <div
+                class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+              ><p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
+                LOOK 045
+              </p>
+                <h4 class="text-xl font-bold serif-luxury">Urban Divinity</h4>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Section 5: Why Choose Cynderella Haute Couture -->
-        <section class="py-24 px-6 lg:px-20 max-w-7xl mx-auto">
-          <div class="flex flex-col items-center mb-16 text-center">
+      <!-- Section 5: Why Choose Cynderella Haute Couture -->
+      <section class="py-24 px-6 lg:px-20 max-w-7xl mx-auto">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <span
+            class="text-primary tracking-[0.3em] uppercase text-xs font-semibold mb-4"
+            >The Standard of Excellence</span
+          >
+          <h2
+            class="text-3xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-white"
+          >
+            Why Choose <span class="italic font-normal">Cynderella</span>
+          </h2>
+          <div class="h-1 w-20 bg-primary mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1: Precision Measurements -->
+          <div
+            class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+            >
+              <span class="material-symbols-outlined text-3xl">straighten</span>
+            </div>
+            <div>
+              <h3
+                class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
+              >
+                Precision Measurements
+              </h3>
+              <p
+                class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
+              >
+                Millimeter-perfect tailoring for every silhouette, ensuring your
+                garment is architecturally sound.
+              </p>
+            </div>
+          </div>
+          <!-- Card 2: Perfect Fit -->
+          <div
+            class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >check_circle</span
+              >
+            </div>
+            <div>
+              <h3
+                class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
+              >
+                Perfect Fit
+              </h3>
+              <p
+                class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
+              >
+                Garments that move with you like a second skin, balancing
+                comfort with high-fashion structure.
+              </p>
+            </div>
+          </div>
+          <!-- Card 3: World-Class Fabrics -->
+          <div
+            class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+            >
+              <span class="material-symbols-outlined text-3xl">diamond</span>
+            </div>
+            <div>
+              <h3
+                class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
+              >
+                World-Class Fabrics
+              </h3>
+              <p
+                class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
+              >
+                Sourced exclusively from the heritage mills of Italy and France
+                for unparalleled texture and drape.
+              </p>
+            </div>
+          </div>
+          <!-- Card 4: Custom Designs -->
+          <div
+            class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
+          >
+            <div
+              class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >auto_fix_high</span
+              >
+            </div>
+            <div>
+              <h3
+                class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
+              >
+                Custom Designs
+              </h3>
+              <p
+                class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
+              >
+                One-of-a-kind creations tailored to your vision, where every
+                stitch tells your unique story.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Full-viewport Testimonial -->
+      <section
+        class="relative min-h-screen w-full flex items-center overflow-hidden bg-slate-900"
+      >
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="High fashion model in gold gown"
+            class="w-full h-full object-cover opacity-60"
+            data-alt="Elegant woman in a shimmering gold haute couture gown"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhFEX7Dbf1Gg4qB7PmVlurYbCEqEe7eJDlfRe9OSziEXrtRJZxWOQ3tD6gpbpp0dAsejYa7YVNRtu0noI5o1tqtFIDsbF9v-gT1fCWG41Do35yizmze9boEcKvHGBrtqSJcz0VGUF9tuJW_X-Mwc1pqhVysLRpeXl8z9P-rfNTFaFHdCqKV4zGQMUspUj5kJtLZCSNw9qX3cBN9ltMQFhESvnNZnEfnww1e3EUcsgXDqzvxB86bHfc9InkbWCeWuDg1SstXaovlZg"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"
+          ></div>
+        </div>
+        <!-- Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-20 py-20">
+          <div class="max-w-2xl">
             <span
-              class="text-primary tracking-[0.3em] uppercase text-xs font-semibold mb-4"
-              >The Standard of Excellence</span
+              class="material-symbols-outlined text-primary text-6xl mb-8 opacity-50"
+              >format_quote</span
             >
             <h2
-              class="text-3xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-white"
+              class="text-3xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-10 italic"
             >
-              Why Choose <span class="italic font-normal">Cynderella</span>
+              "The craftsmanship is
+              <span class="text-primary not-italic font-normal"
+                >unparalleled</span
+              >. I felt like royalty in my custom gown at the Paris gala."
             </h2>
-            <div class="h-1 w-20 bg-primary mt-6"></div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card 1: Precision Measurements -->
-            <div
-              class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
-              >
-                <span class="material-symbols-outlined text-3xl"
-                  >straighten</span
-                >
-              </div>
+            <div class="flex items-center gap-6">
+              <div class="h-[1px] w-12 bg-primary"></div>
               <div>
-                <h3
-                  class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
-                >
-                  Precision Measurements
-                </h3>
+                <p class="text-white text-xl font-medium tracking-wide">
+                  Alexandra V.
+                </p>
                 <p
-                  class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
+                  class="text-primary/80 uppercase text-xs tracking-widest mt-1"
                 >
-                  Millimeter-perfect tailoring for every silhouette, ensuring
-                  your garment is architecturally sound.
+                  International Fashion Consultant
                 </p>
               </div>
             </div>
-            <!-- Card 2: Perfect Fit -->
-            <div
-              class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+            <div class="mt-16 flex gap-4">
+              <button
+                class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all"
               >
-                <span class="material-symbols-outlined text-3xl"
-                  >check_circle</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
-                >
-                  Perfect Fit
-                </h3>
-                <p
-                  class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
-                >
-                  Garments that move with you like a second skin, balancing
-                  comfort with high-fashion structure.
-                </p>
-              </div>
-            </div>
-            <!-- Card 3: World-Class Fabrics -->
-            <div
-              class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
+                <span class="material-symbols-outlined">arrow_back</span>
+              </button>
+              <button
+                class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all"
               >
-                <span class="material-symbols-outlined text-3xl">diamond</span>
-              </div>
-              <div>
-                <h3
-                  class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
-                >
-                  World-Class Fabrics
-                </h3>
-                <p
-                  class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
-                >
-                  Sourced exclusively from the heritage mills of Italy and
-                  France for unparalleled texture and drape.
-                </p>
-              </div>
-            </div>
-            <!-- Card 4: Custom Designs -->
-            <div
-              class="glass-card p-8 rounded-xl flex flex-col items-start gap-6 group"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-background-dark"
-              >
-                <span class="material-symbols-outlined text-3xl"
-                  >auto_fix_high</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="text-xl font-semibold mb-3 text-slate-900 dark:text-white"
-                >
-                  Custom Designs
-                </h3>
-                <p
-                  class="text-slate-600 dark:text-primary/70 leading-relaxed text-sm"
-                >
-                  One-of-a-kind creations tailored to your vision, where every
-                  stitch tells your unique story.
-                </p>
-              </div>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
             </div>
           </div>
-        </section>
-
-        <!-- Section 6: Full-viewport Testimonial -->
-        <section
-          class="relative min-h-screen w-full flex items-center overflow-hidden bg-slate-900"
-        >
-          <!-- Background Image with Overlay -->
-          <div class="absolute inset-0 z-0">
-            <img
-              alt="High fashion model in gold gown"
-              class="w-full h-full object-cover opacity-60"
-              data-alt="Elegant woman in a shimmering gold haute couture gown"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhFEX7Dbf1Gg4qB7PmVlurYbCEqEe7eJDlfRe9OSziEXrtRJZxWOQ3tD6gpbpp0dAsejYa7YVNRtu0noI5o1tqtFIDsbF9v-gT1fCWG41Do35yizmze9boEcKvHGBrtqSJcz0VGUF9tuJW_X-Mwc1pqhVysLRpeXl8z9P-rfNTFaFHdCqKV4zGQMUspUj5kJtLZCSNw9qX3cBN9ltMQFhESvnNZnEfnww1e3EUcsgXDqzvxB86bHfc9InkbWCeWuDg1SstXaovlZg"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"
-            ></div>
-          </div>
-          <!-- Content -->
-          <div
-            class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-20 py-20"
+        </div>
+        <!-- Sidebar Detail for Desktop -->
+        <div class="absolute right-10 bottom-10 hidden lg:block">
+          <p
+            class="text-white/20 vertical-text origin-bottom-right rotate-90 text-sm tracking-[1em] uppercase whitespace-nowrap"
           >
-            <div class="max-w-2xl">
-              <span
-                class="material-symbols-outlined text-primary text-6xl mb-8 opacity-50"
-                >format_quote</span
-              >
-              <h2
-                class="text-3xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-10 italic"
-              >
-                "The craftsmanship is
-                <span class="text-primary not-italic font-normal"
-                  >unparalleled</span
-                >. I felt like royalty in my custom gown at the Paris gala."
-              </h2>
-              <div class="flex items-center gap-6">
-                <div class="h-[1px] w-12 bg-primary"></div>
-                <div>
-                  <p class="text-white text-xl font-medium tracking-wide">
-                    Alexandra V.
-                  </p>
-                  <p
-                    class="text-primary/80 uppercase text-xs tracking-widest mt-1"
+            Testimonials 2026
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        class="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden"
+      >
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/60 to-background-dark z-10"
+          ></div>
+          <div
+            class="w-full h-full bg-cover bg-center"
+            data-alt="Luxury fashion studio with gold accents and fabrics"
+            style="
+              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBacpuhadyry3zXlvytpu_TSs-Egq2AartZQJ6IC_DheGcy0_Py7VR5KCuTI4s4OO1ig5Q-rjH05_SXsacXgiE7rCHJyIWz7AuZkSOPbSWdQ_79LEQs4h0hKkDYOfYgXvYOfbcHA8nldjbv9z4aQmHJpSljgILGbmsPmWn22iXmj3EG4Ezrbpgqfs2CmOZuWTV0cRxPqtRa7P-dyON531Glt8uSqeh7jNACOlsrIeudI8qhreuj36Tkz-rM4_4GKQyTS1rWrcVnqmM&quot;);
+            "
+          ></div>
+        </div>
+        <div class="container mx-auto max-w-6xl relative z-20">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Contact Information -->
+            <div class="space-y-8">
+              <div class="space-y-4">
+                <h2
+                  class="text-primary uppercase tracking-[0.3em] text-sm font-semibold"
+                >
+                  Get in Touch
+                </h2>
+                <h1
+                  class="text-4xl md:text-6xl text-slate-100 font-light leading-tight"
+                >
+                  Crafting Your <br /><span class="italic font-serif"
+                    >Signature Silhouette</span
                   >
-                    International Fashion Consultant
-                  </p>
-                </div>
+                </h1>
+                <p class="text-slate-400 max-w-md text-lg leading-relaxed">
+                  Experience the pinnacle of high fashion in our private studio.
+                  Our artisans are ready to bring your vision to life.
+                </p>
               </div>
-              <div class="mt-16 flex gap-4">
-                <button
-                  class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all"
-                >
-                  <span class="material-symbols-outlined">arrow_back</span>
-                </button>
-                <button
-                  class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all"
-                >
-                  <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >call</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm text-slate-500 uppercase tracking-wider">
+                      Direct Line
+                    </p>
+                    <p class="text-xl text-slate-100 font-medium">
+                      +1 (555) 888-9000
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >mail</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm text-slate-500 uppercase tracking-wider">
+                      Email Concierge
+                    </p>
+                    <p class="text-xl text-slate-100 font-medium">
+                      atelier@cynderella.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >location_on</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm text-slate-500 uppercase tracking-wider">
+                      Private Studio
+                    </p>
+                    <p class="text-xl text-slate-100 font-medium">
+                      7th Arrondissement, Paris, France
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- Sidebar Detail for Desktop -->
-          <div class="absolute right-10 bottom-10 hidden lg:block">
-            <p
-              class="text-white/20 vertical-text origin-bottom-right rotate-90 text-sm tracking-[1em] uppercase whitespace-nowrap"
-            >
-              Testimonials 2026
-            </p>
-          </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section
-          class="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden"
-        >
-          <!-- Background Image with Overlay -->
-          <div class="absolute inset-0 z-0">
-            <div
-              class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/60 to-background-dark z-10"
-            ></div>
-            <div
-              class="w-full h-full bg-cover bg-center"
-              data-alt="Luxury fashion studio with gold accents and fabrics"
-              style="
-                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBacpuhadyry3zXlvytpu_TSs-Egq2AartZQJ6IC_DheGcy0_Py7VR5KCuTI4s4OO1ig5Q-rjH05_SXsacXgiE7rCHJyIWz7AuZkSOPbSWdQ_79LEQs4h0hKkDYOfYgXvYOfbcHA8nldjbv9z4aQmHJpSljgILGbmsPmWn22iXmj3EG4Ezrbpgqfs2CmOZuWTV0cRxPqtRa7P-dyON531Glt8uSqeh7jNACOlsrIeudI8qhreuj36Tkz-rM4_4GKQyTS1rWrcVnqmM&quot;);
-              "
-            ></div>
-          </div>
-          <div class="container mx-auto max-w-6xl relative z-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <!-- Contact Information -->
-              <div class="space-y-8">
-                <div class="space-y-4">
-                  <h2
-                    class="text-primary uppercase tracking-[0.3em] text-sm font-semibold"
-                  >
-                    Get in Touch
-                  </h2>
-                  <h1 class="text-4xl md:text-6xl font-light leading-tight">
-                    Crafting Your <br /><span class="italic font-serif"
-                      >Signature Silhouette</span
-                    >
-                  </h1>
-                  <p class="text-slate-400 max-w-md text-lg leading-relaxed">
-                    Experience the pinnacle of high fashion in our private
-                    studio. Our artisans are ready to bring your vision to life.
-                  </p>
-                </div>
-                <div class="space-y-6">
-                  <div class="flex items-start gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
-                    >
-                      <span class="material-symbols-outlined text-primary"
-                        >call</span
-                      >
-                    </div>
-                    <div>
-                      <p
-                        class="text-sm text-slate-500 uppercase tracking-wider"
-                      >
-                        Direct Line
-                      </p>
-                      <p class="text-xl font-medium">+1 (555) 888-9000</p>
-                    </div>
-                  </div>
-                  <div class="flex items-start gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
-                    >
-                      <span class="material-symbols-outlined text-primary"
-                        >mail</span
-                      >
-                    </div>
-                    <div>
-                      <p
-                        class="text-sm text-slate-500 uppercase tracking-wider"
-                      >
-                        Email Concierge
-                      </p>
-                      <p class="text-xl font-medium">atelier@cynderella.com</p>
-                    </div>
-                  </div>
-                  <div class="flex items-start gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0"
-                    >
-                      <span class="material-symbols-outlined text-primary"
-                        >location_on</span
-                      >
-                    </div>
-                    <div>
-                      <p
-                        class="text-sm text-slate-500 uppercase tracking-wider"
-                      >
-                        Private Studio
-                      </p>
-                      <p class="text-xl font-medium">
-                        7th Arrondissement, Paris, France
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Contact Form (Glassmorphism) -->
-              <div class="glass-effect p-8 md:p-12 rounded-xl">
-                <form action="#" class="space-y-6">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                      <label
-                        class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
-                        >Full Name</label
-                      >
-                      <input
-                        class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600 h-12"
-                        placeholder="Your name"
-                        type="text"
-                      />
-                    </div>
-                    <div class="space-y-2">
-                      <label
-                        class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
-                        >Email Address</label
-                      >
-                      <input
-                        class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600 h-12"
-                        placeholder="email@example.com"
-                        type="email"
-                      />
-                    </div>
-                  </div>
+            <!-- Contact Form (Glassmorphism) -->
+            <div class="glass-effect p-8 md:p-12 rounded-xl">
+              <form action="#" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div class="space-y-2">
                     <label
                       class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
-                      >Phone Number</label
+                      >Full Name</label
                     >
                     <input
                       class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600 h-12"
-                      placeholder="+1 (555) 000-0000"
-                      type="tel"
+                      placeholder="Your name"
+                      type="text"
                     />
                   </div>
                   <div class="space-y-2">
                     <label
                       class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
-                      >Message</label
+                      >Email Address</label
                     >
-                    <textarea
-                      class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600"
-                      placeholder="Tell us about your vision..."
-                      rows="4"
-                    ></textarea>
+                    <input
+                      class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600 h-12"
+                      placeholder="email@example.com"
+                      type="email"
+                    />
                   </div>
-                  <button
-                    class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-lg transition-all duration-300 uppercase tracking-widest text-sm shadow-lg shadow-primary/20"
-                    type="submit"
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
+                    >Phone Number</label
                   >
-                    Book Your Couture Appointment
-                  </button>
-                </form>
-              </div>
+                  <input
+                    class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600 h-12"
+                    placeholder="+1 (555) 000-0000"
+                    type="tel"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-primary/80 font-semibold"
+                    >Message</label
+                  >
+                  <textarea
+                    class="w-full bg-background-dark/40 border-primary/20 rounded-lg focus:ring-primary focus:border-primary text-slate-100 placeholder:text-slate-600"
+                    placeholder="Tell us about your vision..."
+                    rows="4"
+                  ></textarea>
+                </div>
+                <button
+                  class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-lg transition-all duration-300 uppercase tracking-widest text-sm shadow-lg shadow-primary/20"
+                  type="submit"
+                >
+                  Book Your Couture Appointment
+                </button>
+              </form>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Footer -->
-        <footer
-          class="bg-background-dark border-t border-primary/10 pt-16 pb-8"
-        >
-          <div class="container mx-auto px-4 max-w-6xl">
-            <div class="flex flex-col items-center justify-center space-y-10">
-              <!-- Logo -->
-              <div class="text-center">
-                <h2 class="text-3xl font-light tracking-[0.4em] text-primary">
-                  CYNDERELLA
-                </h2>
-                <p
-                  class="text-[10px] uppercase tracking-[0.6em] text-slate-500 mt-2"
-                >
-                  Haute Couture
-                </p>
-              </div>
-              <!-- Quick Links -->
-              <nav class="flex flex-wrap justify-center gap-8 md:gap-16">
-                <a
-                  class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
-                  href="#"
-                  >Collections</a
-                >
-                <a
-                  class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
-                  href="#"
-                  >Atelier</a
-                >
-                <a
-                  class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
-                  href="#"
-                  >Our Story</a
-                >
-                <a
-                  class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
-                  href="#"
-                  >Sustainability</a
-                >
-                <a
-                  class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
-                  href="#"
-                  >Contact</a
-                >
-              </nav>
-              <!-- Social Media -->
-              <div class="flex justify-center gap-8">
-                <a
-                  class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
-                  href="#"
-                >
-                  <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
-                  href="#"
-                >
-                  <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
-                    <path
-                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
-                  href="#"
-                >
-                  <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
-                    <path
-                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-              <!-- Copyright -->
-              <div class="pt-8 border-t border-primary/5 w-full text-center">
-                <p class="text-xs text-slate-600 uppercase tracking-widest">
-                  © 2026 Cynderella Haute Couture. All Rights Reserved.
-                  <span class="mx-2 text-primary">|</span>
-                  Privacy Policy
-                </p>
-              </div>
+      <!-- Footer -->
+      <footer class="bg-background-dark border-t border-primary/10 pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="flex flex-col items-center justify-center space-y-10">
+            <!-- Logo -->
+            <div class="text-center">
+              <h2 class="text-3xl font-light tracking-[0.4em] text-primary">
+                CYNDERELLA
+              </h2>
+              <p
+                class="text-[10px] uppercase tracking-[0.6em] text-slate-500 mt-2"
+              >
+                Haute Couture
+              </p>
+            </div>
+            <!-- Quick Links -->
+            <nav class="flex flex-wrap justify-center gap-8 md:gap-16">
+              <a
+                class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                href="#"
+                >Collections</a
+              >
+              <a
+                class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                href="#"
+                >Atelier</a
+              >
+              <a
+                class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                href="#"
+                >Our Story</a
+              >
+              <a
+                class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                href="#"
+                >Sustainability</a
+              >
+              <a
+                class="text-sm uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                href="#"
+                >Contact</a
+              >
+            </nav>
+            <!-- Social Media -->
+            <div class="flex justify-center gap-8">
+              <a
+                class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
+                href="#"
+              >
+                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
+                href="#"
+              >
+                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:border-primary hover:text-primary transition-all"
+                href="#"
+              >
+                <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-primary/5 w-full text-center">
+              <p class="text-xs text-slate-600 uppercase tracking-widest">
+                © <span id="year"></span> Cynderella Haute Couture. All Rights
+                Reserved.
+                <span class="mx-2 text-primary">|</span>
+                Privacy Policy
+              </p>
             </div>
           </div>
-        </footer>
-      </main>
+        </div>
+      </footer>
+    </main>
     <!-- </div> -->
+    <script src="./main.js"></script>
   </body>
 </html>
