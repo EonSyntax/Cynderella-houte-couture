@@ -80,3 +80,18 @@ mobileNavBackdrop.addEventListener("click", () => {
   mobileNav.classList.add("hidden");
   mobileNavBackdrop.classList.add("hidden");
 });
+
+// Scroll to top functionality
+const scrollBtn = document.getElementById("scroll-to-top");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    scrollBtn.classList.remove("opacity-0", "invisible");
+    scrollBtn.classList.add("opacity-100", "visible");
+  } else {
+    scrollBtn.classList.add("opacity-0", "invisible");
+    scrollBtn.classList.remove("opacity-100", "visible");
+  }
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
