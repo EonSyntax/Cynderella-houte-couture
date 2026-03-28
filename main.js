@@ -21,7 +21,6 @@ function updateThemeButton() {
     themeToggle.classList.add("text-primary");
     themeToggle.classList.remove("hover:text-primary");
     themeToggle.classList.add("hover:text-slate-100");
-
   }
 }
 
@@ -50,3 +49,34 @@ if (savedTheme) {
   htmlElement.classList.add(savedTheme);
   updateThemeButton();
 }
+
+// Mobile nav toggle
+const menuButton = document.getElementById("menu-button");
+const mobileNav = document.getElementById("mobile-nav");
+const mobileNavBackdrop = document.getElementById("mobile-nav-backdrop");
+const closeButton = mobileNav.querySelector("button");
+
+menuButton.addEventListener("click", () => {
+  mobileNav.classList.remove("hidden");
+  mobileNavBackdrop.classList.remove("hidden");
+});
+
+closeButton.addEventListener("click", () => {
+  mobileNav.classList.add("hidden");
+  mobileNavBackdrop.classList.add("hidden");
+});
+
+// Close mobile nav when a link is clicked
+const navLinks = mobileNav.querySelectorAll("a[href]");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.add("hidden");
+    mobileNavBackdrop.classList.add("hidden");
+  });
+});
+
+// Close mobile nav when backdrop is clicked
+mobileNavBackdrop.addEventListener("click", () => {
+  mobileNav.classList.add("hidden");
+  mobileNavBackdrop.classList.add("hidden");
+});
