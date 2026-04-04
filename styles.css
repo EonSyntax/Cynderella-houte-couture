@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  src: url('./assets/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: block; /* 🔥 prevents flicker */
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .glass-nav {
   background: rgba(18, 17, 13, 0.6);
   backdrop-filter: blur(12px);
@@ -40,4 +58,17 @@
 
 .timeline-line {
   background: linear-gradient(to bottom, transparent, #d4af35, transparent);
+}
+
+@keyframes grayscale-pulse {
+  0%, 100% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(0%);
+  }
+}
+
+.animate-grayscale-pulse {
+  animation: grayscale-pulse 3s ease-in-out infinite;
 }
