@@ -1,19 +1,29 @@
 @font-face {
-  font-family: 'Material Symbols Outlined';
-  src: url('./assets/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2') format('woff2');
+  font-family: "Material Symbols Outlined";
+  src: url("./assets/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2")
+    format("woff2");
   font-weight: 100 700;
   font-style: normal;
   font-display: block; /* 🔥 prevents flicker */
 }
 
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
   line-height: 1;
   display: inline-block;
   white-space: nowrap;
+}
+
+.carousel-container {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
 }
 
 .glass-nav {
@@ -56,12 +66,26 @@
   border: 1px solid rgba(212, 175, 53, 0.2);
 }
 
+/* Custom Carousel Styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.carousel-slide {
+  flex: 0 0 100%;
+}
+
 .timeline-line {
   background: linear-gradient(to bottom, transparent, #d4af35, transparent);
 }
 
 @keyframes grayscale-pulse {
-  0%, 100% {
+  0%,
+  100% {
     filter: grayscale(100%);
   }
   50% {

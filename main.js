@@ -95,3 +95,67 @@ window.addEventListener("scroll", () => {
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+document.querySelectorAll(".carousel-container").forEach((carousel) => {
+  const track = carousel.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  // Use more robust selectors for nav and indicators
+  const nextBtn =
+    carousel.querySelector("button.carousel-next") ||
+    carousel.querySelector("button:last-of-type");
+  const prevBtn =
+    carousel.querySelector("button.carousel-prev") ||
+    carousel.querySelector("button:first-of-type");
+  const indicators = carousel.querySelectorAll(
+    ".carousel-indicators > div, .flex.gap-2 > div",
+  );
+  let currentIdx = 0;
+
+  // Ensure slides are flex and min-w-full for horizontal sliding
+  if (track) {
+    track.style.display = "flex";
+    slides.forEach((slide) => (slide.style.minWidth = "100%"));
+    track.style.transition = "transform 0.7s";
+  }
+
+  function updateCarousel(index) {
+    if (!track) return;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    indicators.forEach((dot, i) => {
+      dot.classList.toggle("bg-primary", i === index);
+      dot.classList.toggle("bg-primary/30", i !== index);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentIdx = (currentIdx + 1) % slides.length;
+      updateCarousel(currentIdx);
+    });
+  }
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+      updateCarousel(currentIdx);
+    });
+  }
+
+  // Indicator click support
+  indicators.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      currentIdx = i;
+      updateCarousel(currentIdx);
+    });
+  });
+
+  // Simple auto-loop
+  setInterval(
+    () => {
+      currentIdx = (currentIdx + 1) % slides.length;
+      updateCarousel(currentIdx);
+    },
+    5000 + Math.random() * 2000,
+  );
+
+  updateCarousel(currentIdx);
+});

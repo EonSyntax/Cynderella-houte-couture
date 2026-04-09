@@ -271,7 +271,7 @@
             class="grid grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-white/5"
           >
             <div>
-              <h4 class="text-primary text-3xl font-black mb-1">25+</h4>
+              <h4 class="text-primary text-3xl font-black mb-1">7+</h4>
               <p
                 class="text-[10px] uppercase tracking-widest font-bold opacity-60"
               >
@@ -279,7 +279,7 @@
               </p>
             </div>
             <div>
-              <h4 class="text-primary text-3xl font-black mb-1">1.2k</h4>
+              <h4 class="text-primary text-3xl font-black mb-1">100+</h4>
               <p
                 class="text-[10px] uppercase tracking-widest font-bold opacity-60"
               >
@@ -312,12 +312,83 @@
           >
             <!-- Main Image -->
             <div class="relative w-full h-full">
-              <img
-                alt="High-end fashion photography"
-                class="w-full h-full object-cover rounded shadow-2xl"
-                data-alt="Editorial close-up of luxurious golden fabric textures"
-                src="./assets/fashion-photography.webp"
-              />
+              <div
+                class="carousel-container flex h-full overflow-x-auto snap-x snap-mandatory transition-all duration-700 rounded-[50px]"
+                id="carousel"
+              >
+                <!-- Slide 1 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <img
+                    alt="High-fashion model in golden couture"
+                    class="w-full h-full object-cover"
+                    src="./assets/fashion-photography.webp"
+                  />
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <img
+                    alt="Editorial fashion portrait"
+                    class="w-full h-full object-cover"
+                    src="./assets/dreamtolife.webp"
+                  />
+                </div>
+                <!-- Slide 3 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <img
+                    alt="Luxurious evening gown detail"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3qqILshx4rFOC8mSjQfoB4V3ZOeq3lEo69gCR7iUJBGK4i5PGX2Znnt1mYIRB3OZqfhrlAHPYN8PyJckTgbuSxSD9pu0meMSZcVE3t1g73H36JpcJIWlv8-USAziNq9C6XpIiyWEiP6OrERbEsJ6c0qZpOv7Vuzy8cHy4rYLV6ZBU0VqPVwCVFyTi35Y6vOMV9Bw78e_ibg651GjDQWpKlfKFTOBqLpuTjJZetDMMCZTL5JQrQBPY1rHCo8ETMvueLXRwoOxU9HU"
+                  />
+                </div>
+                <!-- Slide 4 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <img
+                    alt="Avant-garde couture design"
+                    class="w-full h-full object-cover"
+                    src="./assets/noir-nocturne.webp"
+                  />
+                </div>
+              </div>
+              <!-- Navigation Buttons -->
+              <div
+                class="absolute inset-0 flex items-center justify-between px-6 pointer-events-none"
+              >
+                <button
+                  class="pointer-events-auto w-12 h-12 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document.getElementById('carousel').scrollBy({
+                      left: -window.innerWidth / 2,
+                      behavior: 'smooth',
+                    })
+                  "
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="pointer-events-auto w-12 h-12 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document.getElementById('carousel').scrollBy({
+                      left: window.innerWidth / 2,
+                      behavior: 'smooth',
+                    })
+                  "
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+              <!-- Indicators -->
+              <div
+                class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3"
+              >
+                <div class="w-12 h-[2px] bg-primary"></div>
+                <div class="w-8 h-[2px] bg-white/20"></div>
+                <div class="w-8 h-[2px] bg-white/20"></div>
+                <div class="w-8 h-[2px] bg-white/20"></div>
+              </div>
               <!-- Decorative Floating Element -->
               <div
                 data-aos="flip-left"
@@ -630,78 +701,264 @@
           <div class="flex items-center gap-4 border-b border-primary/30 pb-2">
             <span class="text-4xl font-black serif-luxury opacity-20">|</span>
             <span class="uppercase tracking-widest text-[10px] font-bold"
-              >Scroll to discover</span
+              >Explore Our Collection</span
             >
           </div>
         </div>
         <div class="dynamic-grid">
-          <!-- Large Feature Card -->
+          <!-- Large Feature Card (Scroll/Snap Carousel) -->
           <div
-            class="col-span-12 md:col-span-7 group relative aspect-[4/5] overflow-hidden bg-primary/5"
+            class="col-span-12 md:col-span-7 group relative aspect-[4/5] overflow-hidden bg-primary/5 rounded-[50px]"
           >
             <div
-              class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              data-alt="Avant-garde model in yellow editorial dress"
-              style="background-image: url(./assets/saffron.webp)"
-            ></div>
-            <div
-              class="hidden dark:block absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all"
-            ></div>
-            <div
-              class="absolute bottom-10 left-10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+              class="carousel-container flex h-full overflow-x-auto snap-x snap-mandatory transition-all duration-700"
+              id="feature-carousel"
             >
-              <p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
-                LOOK 043
-              </p>
-              <h4 class="text-3xl font-black serif-luxury italic">
-                Saffron Rebellion
-              </h4>
-            </div>
-          </div>
-          <!-- Side Grid -->
-          <div class="col-span-12 md:col-span-5 flex flex-col gap-6">
-            <div
-              class="group relative aspect-square overflow-hidden bg-primary/5"
-            >
-              <div
-                class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                data-alt="Detail of a luxury fashion fabric"
-                style="background-image: url(./assets/noir-nocturne.webp)"
-              ></div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
-              ></div>
-              <div
-                class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
-              >
-                <p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
-                  LOOK 044
-                </p>
-                <h4 class="text-3xl font-black serif-luxury italic">
-                  Noir Nocturne
-                </h4>
+              <!-- Slide 1 -->
+              <div class="min-w-full h-full snap-center relative">
+                <div
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700"
+                  data-alt="Avant-garde model in yellow editorial dress"
+                  style="background-image: url(./assets/saffron.webp)"
+                ></div>
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div
+                  class="absolute bottom-10 left-10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+                >
+                  <p
+                    class="text-primary text-xs font-bold tracking-[0.2em] mb-2"
+                  >
+                    LOOK 043
+                  </p>
+                  <h4
+                    class="text-3xl font-black serif-luxury italic text-white"
+                  >
+                    Saffron Rebellion
+                  </h4>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="min-w-full h-full snap-center relative">
+                <div
+                  class="absolute inset-0 bg-cover bg-center"
+                  style="background-image: url(./assets/saffron.webp)"
+                ></div>
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div
+                  class="absolute bottom-10 left-10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+                >
+                  <p
+                    class="text-primary text-xs font-bold tracking-[0.2em] mb-2"
+                  >
+                    LOOK 043
+                  </p>
+                  <h4
+                    class="text-3xl font-black serif-luxury italic text-white"
+                  >
+                    Emerald Grace
+                  </h4>
+                </div>
               </div>
             </div>
+            <!-- Navigation -->
             <div
-              class="group relative aspect-square overflow-hidden bg-primary/5"
+              class="absolute inset-x-0 top-1/2 -translate-y-1/2 px-4 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+            >
+              <button
+                class="pointer-events-auto w-12 h-12 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                onclick="
+                  document
+                    .getElementById('feature-carousel')
+                    .scrollBy({ left: -window.innerWidth, behavior: 'smooth' })
+                "
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                class="pointer-events-auto w-12 h-12 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                onclick="
+                  document
+                    .getElementById('feature-carousel')
+                    .scrollBy({ left: window.innerWidth, behavior: 'smooth' })
+                "
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+            <!-- Indicators -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+              <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-primary/30"></div>
+            </div>
+          </div>
+          <!-- Column 2 & 3 Side Stack -->
+          <div class="col-span-12 md:col-span-5 flex flex-col gap-6">
+            <!-- Column 2 Carousel -->
+            <div
+              class="group relative aspect-square overflow-hidden bg-primary/5 rounded-[50px]"
             >
               <div
-                class="absolute inset-0 bg-contain bg-center transition-transform duration-700 group-hover:scale-110"
-                data-alt="Editorial fashion shoot in urban setting"
-                style="background-image: url(./assets/urban-divinity.webp)"
-              ></div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
-              ></div>
-              <div
-                class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+                class="carousel-container flex h-full overflow-x-auto snap-x snap-mandatory transition-all duration-700"
+                id="side-carousel-1"
               >
-                <p class="text-primary text-xs font-bold tracking-[0.2em] mb-2">
-                  LOOK 045
-                </p>
-                <h4 class="text-3xl font-black serif-luxury italic">
-                  Urban Divinity
-                </h4>
+                <!-- Slide 1 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    data-alt="Detail of a luxury fashion fabric"
+                    style="background-image: url(./assets/noir-nocturne.webp)"
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
+                  ></div>
+                  <div
+                    class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+                  >
+                    <h4 class="text-xl font-bold serif-luxury text-white">
+                      Noir Nocturne
+                    </h4>
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url(./assets/noir-nocturne.webp)"
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
+                  ></div>
+                  <div
+                    class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+                  >
+                    <h4 class="text-xl font-bold serif-luxury text-white">
+                      Silk Symphony
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-x-0 top-1/2 -translate-y-1/2 px-4 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+              >
+                <button
+                  class="pointer-events-auto w-10 h-10 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document
+                      .getElementById('side-carousel-1')
+                      .scrollBy({
+                        left: -window.innerWidth,
+                        behavior: 'smooth',
+                      })
+                  "
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="pointer-events-auto w-10 h-10 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document
+                      .getElementById('side-carousel-1')
+                      .scrollBy({ left: window.innerWidth, behavior: 'smooth' })
+                  "
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+              <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"
+              >
+                <div class="w-1 h-1 rounded-full bg-primary"></div>
+                <div class="w-1 h-1 rounded-full bg-primary/30"></div>
+              </div>
+            </div>
+            <!-- Column 3 Carousel -->
+            <div
+              class="group relative aspect-square overflow-hidden bg-primary/5 rounded-[50px]"
+            >
+              <div
+                class="carousel-container flex h-full overflow-x-auto snap-x snap-mandatory transition-all duration-700"
+                id="side-carousel-2"
+              >
+                <!-- Slide 1 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    data-alt="Editorial fashion shoot in urban setting"
+                    style="background-image: url(./assets/urban-divinity.webp)"
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
+                  ></div>
+                  <div
+                    class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+                  >
+                    <h4 class="text-xl font-bold serif-luxury text-white">
+                      Urban Divinity
+                    </h4>
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full h-full snap-center relative">
+                  <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url(./assets/urban-divinity.webp)"
+                  ></div>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-all"
+                  ></div>
+                  <div
+                    class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all"
+                  >
+                    <h4 class="text-xl font-bold serif-luxury text-white">
+                      Modern Muse
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-x-0 top-1/2 -translate-y-1/2 px-4 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+              >
+                <button
+                  class="pointer-events-auto w-10 h-10 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document
+                      .getElementById('side-carousel-2')
+                      .scrollBy({
+                        left: -window.innerWidth,
+                        behavior: 'smooth',
+                      })
+                  "
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_left</span
+                  >
+                </button>
+                <button
+                  class="pointer-events-auto w-10 h-10 flex items-center justify-center glass-nav rounded-full hover:bg-primary/20 transition-all border-primary/30"
+                  onclick="
+                    document
+                      .getElementById('side-carousel-2')
+                      .scrollBy({ left: window.innerWidth, behavior: 'smooth' })
+                  "
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+              <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"
+              >
+                <div class="w-1 h-1 rounded-full bg-primary"></div>
+                <div class="w-1 h-1 rounded-full bg-primary/30"></div>
               </div>
             </div>
           </div>
